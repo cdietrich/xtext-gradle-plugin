@@ -134,7 +134,7 @@ class Language implements Named {
 @Accessors
 class GeneratorConfig {
 	@Input boolean suppressWarningsAnnotation = true
-	@Input String javaSourceLevel
+	@Input @Optional String javaSourceLevel
 	@Nested val GeneratedAnnotationOptions generatedAnnotation = new GeneratedAnnotationOptions
 	@Nested val NamedDomainObjectContainer<Outlet> outlets
 
