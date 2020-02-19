@@ -18,6 +18,7 @@ import org.xtext.gradle.XtextBuilderPlugin
 import org.xtext.gradle.XtextJavaLanguagePlugin
 import org.xtext.gradle.tasks.XtextExtension
 import org.xtext.gradle.tasks.XtextGenerate
+import com.android.builder.model.SourceProvider
 
 class XtextAndroidBuilderPlugin implements Plugin<Project> {
 
@@ -84,7 +85,7 @@ class XtextAndroidBuilderPlugin implements Plugin<Project> {
 				}
 			})
 			val sourceDirs = newArrayList
-			val javaDirs = variant.sourceSets.map[javaDirectories].flatten.filter[directory]
+			val javaDirs = variant.sourceSets.map[SourceProvider p | p.javaDirectories].flatten.filter[directory]
 			sourceDirs += javaDirs
 			sourceDirs += #[
 				variant.aidlCompile.sourceOutputDir,

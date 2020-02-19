@@ -2,7 +2,9 @@ description 'A plugin for integrating Xtext based Code generators with the Andro
 
 dependencies {
 	compile project(':xtext-gradle-plugin')
-	compile 'com.android.tools.build:gradle:2.2.3'
+	compile 'com.android.tools.build:gradle:2.3.0'
+	compile 'com.android.tools.build:gradle-core:2.3.0'
+	compile 'com.android.tools.build:builder-model:2.3.0'
 	integTestCompile project(path : ':xtext-gradle-plugin', configuration: 'integTestCompile')
 }
 
