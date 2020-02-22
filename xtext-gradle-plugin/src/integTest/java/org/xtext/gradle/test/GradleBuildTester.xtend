@@ -49,7 +49,7 @@ class GradleBuildTester extends ExternalResource {
 	def void setContent(File file, CharSequence content) {
 		file.parentFile.mkdirs
 		file.createNewFile
-		Files.write(content, file, Charsets.UTF_8)
+		Files.asCharSink(file, Charsets.UTF_8).write(content)
 	}
 
 	def void append(File file, CharSequence content) {
@@ -65,7 +65,7 @@ class GradleBuildTester extends ExternalResource {
 	}
 
 	def String getContentAsString(File file) {
-		Files.toString(file, Charsets.UTF_8)
+		Files.asCharSource(file, Charsets.UTF_8).toString
 	}
 
 	def byte[] getContent(File file) {
