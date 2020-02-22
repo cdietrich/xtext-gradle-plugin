@@ -65,7 +65,7 @@ class GradleBuildTester extends ExternalResource {
 	}
 
 	def String getContentAsString(File file) {
-		Files.asCharSource(file, Charsets.UTF_8).toString
+		Files.asCharSource(file, Charsets.UTF_8).read
 	}
 
 	def byte[] getContent(File file) {
